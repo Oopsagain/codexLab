@@ -318,6 +318,15 @@ Suggested verification prompt:
 
 Note: the completion endpoint writes to `data/tasks.json` after you fix Bug B. That is expected during testing. Just make sure you ask Codex to review that file before the final commit.
 
+### Run the automated test suite
+
+```bash
+pip install -r requirements-dev.txt
+pytest -v
+```
+
+The tests use an isolated copy of `data/tasks.json`, so running them does not modify the sample data.
+
 ### Verify the application still runs
 
 ```bash
